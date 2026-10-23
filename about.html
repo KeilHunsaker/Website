@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Keil Hunsaker — The Long Run: From Paper Tape to Modern Web Applications</title>
+  <meta name="description" content="The factual, first-person narrative background of Keil Hunsaker covering decades of low-level systems, engineering, and web maintenance experience.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Keil Hunsaker — Home">
+        <span class="brand-name">Keil Hunsaker</span>
+        <span class="brand-meta">Web Development &amp; Systems</span>
+      </a>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="primary-navigation" class="site-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link active" aria-current="page">About Me</a></li>
+          <li><a href="index.html#contact" class="btn btn-primary btn-nav">Get in Touch</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <article class="narrative-article">
+      <header class="narrative-header">
+        <div class="container reading-container">
+          <h1 class="narrative-title">The Long Run: From Paper Tape to Modern Web Applications</h1>
+          <p class="narrative-byline">By Keil Hunsaker</p>
+        </div>
+      </header>
+
+      <div class="container reading-container narrative-body">
+        <!-- Section 1 -->
+        <section class="narrative-section" aria-labelledby="early-hardware-heading">
+          <h2 id="early-hardware-heading">Early Hardware &amp; Mainframe Operations</h2>
+          <p>
+            My history with computers started in the eighth grade in Saudi Arabia, where my father was working for Aramco. They offered a basic programming class, and that was where I got hooked. At the time, our setup consisted of about six mechanical Teletypes and a single CRT screen. Because access to the CRT was limited, my earliest programming didn't involve a monitor at all. You entered your instructions, the machine chattered back onto paper, and you learned quickly that your logic had to be right before you touched the machine.
+          </p>
+          <p>
+            When I started college at the University of Missouri-Rolla (now the Missouri University of Science and Technology), I entered their co-op program to alternate between school and professional work. My first placement was at Westinghouse. At that time, the company was still running programs from physical punched card decks. My job was straightforward automation: inserting a short Job Control Language (JCL) script at the head of batch files so the system would save the card deck contents directly to magnetic tape or another format instead of requiring operators to keep handling physical trays of cards. From there, I moved into another part of the project using a database programming language called Mantis, until financial constraints forced Westinghouse to shut down their co-op program.
+          </p>
+          <p>
+            The next semester, I joined IBM. My first assignment was on an airline project focused on communications between personal computers and enterprise mainframes. A major technical hurdle on that project was handling translation issues between PC ASCII and mainframe EBCDIC format. We didn't have visual source-level debuggers; our debugging environment was assembly code. We would take a physical printout of the compiled C code paired directly with the corresponding assembly listings and trace the instructions by hand to isolate faults.
+          </p>
+        </section>
+
+        <hr class="narrative-divider" aria-hidden="true">
+
+        <!-- Section 2 -->
+        <section class="narrative-section" aria-labelledby="systems-os-heading">
+          <h2 id="systems-os-heading">Systems, Operating Systems &amp; High-Performance Computing</h2>
+          <p>
+            My next IBM co-op assignment placed me in the OS/2 department during the OS/2 1.0 and 1.1 releases. I worked in the software development toolkit group, which built tools for external developers. When I arrived, they handed me an unmounted physical hard drive and told me to put it in my machine. Up to that point, I had never opened a computer case, so I had to learn how to handle hardware on the spot. That was basically how the IBM co-op program worked. Throw you in the deep end and if you really need it, throw you a line.
+          </p>
+          <p>
+            My primary assignment was writing a utility to convert OS/2 1.0 programs—which ran strictly full-screen—into OS/2 1.1 windowed applications. The fundamental mechanism involved flipping an execution flag bit in the program header. However, doing that safely required parsing the binary executable header and checking every imported system function against a master list of supported, questionable, or blocked APIs before presenting the outcome to the developer. If they chose, they could supply a command flag to force the conversion regardless. That utility was included in the official release of the IBM OS/2 1.1 Toolkit under the name <strong><code>Winnable</code></strong>.
+          </p>
+          <p>
+            After graduating from college, I took a position at Western Geophysical in Houston, Texas, writing FORTRAN modules for their seismic and geophysical data processing systems. After a couple of years, our operations migrated from mainframes to Unix environments, managing jobs across an infrastructure of Sun, IBM, Convex, and Cray systems.
+          </p>
+          <p>
+            During that platform shift, I handled several critical plotting and graphics utilities:
+          </p>
+          <ul class="narrative-list">
+            <li>
+              Wrote the conversion program that translated our internal plot format into the seismic industry-standard plot format, converting individual vector instructions (triangles, squares, circles, and coordinate sets) to match the new specifications.
+            </li>
+            <li>
+              Patched and overhauled our existing plot display viewer so it rendered correctly using the updated plot format.
+            </li>
+            <li>
+              Developed a tracking utility to monitor plot file queues and their active print statuses.
+            </li>
+          </ul>
+          <p>
+            I later returned to IBM in Boca Raton, Florida, working in their test division to validate OS/2 fix packs. My responsibilities included compatibility testing for DOS, Windows, and Presentation Manager. For DOS and Windows, I ran software suites to ensure core system compatibility had not regressed. For Presentation Manager, I helped create and debug a series of automated programs designed to stress-test the graphical windowing features. When that project concluded, I transitioned to Tivoli to work on Workspace on Demand.
+          </p>
+        </section>
+
+        <hr class="narrative-divider" aria-hidden="true">
+
+        <!-- Section 3 -->
+        <section class="narrative-section" aria-labelledby="business-ops-heading">
+          <h2 id="business-ops-heading">Real-World Business Operations &amp; Web Development</h2>
+          <p>
+            After some time working outside the tech industry, I joined Microkinetics, a small industrial hardware and controls company in Atlanta, Georgia. Because it was a compact operation, I handled a wide array of technical and operational responsibilities:
+          </p>
+          <ul class="narrative-list">
+            <li>IT infrastructure and local network maintenance</li>
+            <li>Web development and site updates</li>
+            <li>Shipping and receiving logistics</li>
+            <li>Physical inventory tracking</li>
+            <li>Component and system level electronics testing</li>
+          </ul>
+          <p>
+            While managing those everyday business bottlenecks, I overhauled their online sales workflow. Their existing site had grown as a collection of standalone, static HTML pages where every individual page carried its own hardcoded navigation. Because no ready-made templating libraries fit our environment at the time, I replaced that setup with a rudimentary PHP templating engine so shared elements were managed in one place.
+          </p>
+          <p>
+            I also upgraded their payment and fulfillment infrastructure:
+          </p>
+          <ul class="narrative-list">
+            <li>
+              <strong>Online Payment Processing:</strong> Replaced their manual workflow—where credit cards were collected and typed by hand into an office payment terminal—by integrating automated checkouts via the PayPal API.
+            </li>
+            <li>
+              <strong>Logistics &amp; Rate Calculation:</strong> Implemented direct UPS API integration so shipping rates and tracking information could be retrieved and provided to customers automatically.
+            </li>
+            <li>
+              <strong>Interactive Invoicing Tool:</strong> Built an internal billing application using vanilla JavaScript and PHP. It allowed staff to generate clean, formatted invoices for repair customers with full parts lists, dynamic cross-field recalculations as quantities changed, and accurate summary totals without third-party frameworks.
+            </li>
+          </ul>
+          <p>
+            Following Microkinetics, I worked at Global-e, a company providing merchants with international tariff calculations, customs clearance, and duty management for global commerce. In that role, I worked with both Magento and Laravel codebases. My daily work focused on technical merchant onboarding: writing the integration logic required to bring new retailers onto the platform, configuring payment pipelines to accept and process gift cards, and ensuring regional tax and checkout rules functioned correctly across each store.
+          </p>
+        </section>
+
+        <hr class="narrative-divider" aria-hidden="true">
+
+        <!-- Section 4 -->
+        <section class="narrative-section" aria-labelledby="technical-baseline-heading">
+          <h2 id="technical-baseline-heading">Technical Baseline</h2>
+          <div class="baseline-grid">
+            <div class="baseline-item">
+              <h3 class="baseline-category">Languages &amp; Core Environments</h3>
+              <p>C, Fortran, Mantis, Assembly (debugging), PHP, JavaScript, SQL</p>
+            </div>
+            <div class="baseline-item">
+              <h3 class="baseline-category">Operating Systems &amp; Platforms</h3>
+              <p>Unix (Sun, Convex, Cray, IBM), Linux, IBM OS/2 (1.0/1.1), DOS, Windows, Mainframe / JCL</p>
+            </div>
+            <div class="baseline-item">
+              <h3 class="baseline-category">Frameworks &amp; Integrations</h3>
+              <p>Laravel, Magento, PayPal API, UPS API</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Closing Callout Card -->
+        <aside class="closing-callout card" aria-labelledby="closing-callout-heading">
+          <h2 id="closing-callout-heading" class="closing-callout-title">Need Help With Your Site?</h2>
+          <p>
+            Whether you are dealing with a form that stopped sending emails, a blank screen after a server update, or an older site that needs maintenance, send a note describing the problem.
+          </p>
+          <div class="hero-actions">
+            <a href="index.html#contact" class="btn btn-primary">Get in Touch</a>
+            <a href="index.html#services" class="btn btn-secondary">Explore Services</a>
+          </div>
+        </aside>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Keil Hunsaker</strong> — Practical Web Development &amp; Systems Troubleshooting
+      </div>
+      <div class="footer-meta">
+        <span>Woodstock, GA</span>
+        <span aria-hidden="true">&middot;</span>
+        <a href="mailto:keil@keilhunsaker.com">keil@keilhunsaker.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
