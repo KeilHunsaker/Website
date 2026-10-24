@@ -1,6 +1,6 @@
 /**
  * script.js
- * Handles mobile navigation toggling and accessible client-side contact form validation.
+ * Handles mobile navigation toggling, tabbed service cards, and accessible client-side contact form validation.
  */
 (function () {
   'use strict';
@@ -37,7 +37,60 @@
     });
   }
 
-  // 2. Client-Side Contact Form Validation & Feedback
+  // 2. Tabbed Services Cards
+  const serviceTabs = Array.from(document.querySelectorAll('.service-tab[role="tab"]'));
+  const serviceCards = Array.from(document.querySelectorAll('.service-card[role="tabpanel"]'));
+
+  if (serviceTabs.length > 0 && serviceCards.length > 0) {
+    function activateServiceTab(targetTab, shouldFocus) {
+      const targetPanelId = targetTab.getAttribute('aria-controls');
+
+      serviceTabs.forEach(function (tab) {
+        const isSelected = tab === targetTab;
+        tab.classList.toggle('is-active', isSelected);
+        tab.setAttribute('aria-selected', String(isSelected));
+        tab.setAttribute('tabindex', isSelected ? '0' : '-1');
+      });
+
+      serviceCards.forEach(function (card) {
+        const isTarget = card.id === targetPanelId;
+        card.classList.toggle('is-active', isTarget);
+        card.setAttribute('aria-hidden', String(!isTarget));
+        card.setAttribute('tabindex', isTarget ? '0' : '-1');
+      });
+
+      if (shouldFocus) {
+        targetTab.focus();
+      }
+    }
+
+    serviceTabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () {
+        activateServiceTab(tab, false);
+      });
+
+      tab.addEventListener('keydown', function (event) {
+        let nextIndex = null;
+
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+          nextIndex = (index + 1) % serviceTabs.length;
+        } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+          nextIndex = (index - 1 + serviceTabs.length) % serviceTabs.length;
+        } else if (event.key === 'Home') {
+          nextIndex = 0;
+        } else if (event.key === 'End') {
+          nextIndex = serviceTabs.length - 1;
+        }
+
+        if (nextIndex !== null) {
+          event.preventDefault();
+          activateServiceTab(serviceTabs[nextIndex], true);
+        }
+      });
+    });
+  }
+
+  // 3. Client-Side Contact Form Validation & Feedback
   const contactForm = document.querySelector('#contact-form');
 
   if (contactForm) {

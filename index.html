@@ -13,8 +13,11 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand" aria-label="Keil Hunsaker — Home">
-        <span class="brand-name">Keil Hunsaker</span>
-        <span class="brand-meta">Web Development &amp; Systems</span>
+        <img src="freelanceLogo.svg" alt="Keil Hunsaker logo" class="brand-logo" width="440" height="440">
+        <span class="brand-text">
+          <span class="brand-name">Keil Hunsaker</span>
+          <span class="brand-meta">Web Development &amp; Systems</span>
+        </span>
       </a>
 
       <button
@@ -65,91 +68,172 @@
           <h2 id="services-heading" class="section-title">What I Can Help You With</h2>
         </div>
 
-        <div class="services-grid">
-          <!-- Service 1 -->
-          <article class="card service-card">
-            <div class="service-card-header">
-              <span class="service-number" aria-hidden="true">01</span>
-              <h3 class="card-title">1. Legacy Code &amp; Web Maintenance</h3>
-            </div>
-            <p class="card-intro">
-              If your site or application was built years ago and has stopped working—or if your hosting provider is warning you about an outdated PHP version—I can step in and fix it.
-            </p>
-            <ul class="service-list">
-              <li>
-                <strong>PHP Upgrades:</strong> Reviewing existing code, identifying deprecated functions, and ensuring scripts run cleanly on modern PHP versions without crashing.
-              </li>
-              <li>
-                <strong>Database &amp; Script Fixes:</strong> Diagnosing database connection drops, correcting backend logic errors, and resolving runtime bugs.
-              </li>
-              <li>
-                <strong>Code Cleanups:</strong> Organizing repetitive, messy code so your site is stable, faster, and easier to maintain moving forward.
-              </li>
-            </ul>
-          </article>
+        <div class="services-tabs-container">
+          <div class="services-tablist" role="tablist" aria-label="Services">
+            <button
+              type="button"
+              id="tab-service-1"
+              class="service-tab is-active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-service-1"
+              tabindex="0"
+            >
+              <span class="service-tab-number" aria-hidden="true">01</span>
+              <span class="service-tab-label">Legacy Code &amp; Maintenance</span>
+            </button>
+            <button
+              type="button"
+              id="tab-service-2"
+              class="service-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-service-2"
+              tabindex="-1"
+            >
+              <span class="service-tab-number" aria-hidden="true">02</span>
+              <span class="service-tab-label">Forms, Checkouts &amp; Integrations</span>
+            </button>
+            <button
+              type="button"
+              id="tab-service-3"
+              class="service-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-service-3"
+              tabindex="-1"
+            >
+              <span class="service-tab-number" aria-hidden="true">03</span>
+              <span class="service-tab-label">Server, Hosting &amp; DNS</span>
+            </button>
+            <button
+              type="button"
+              id="tab-service-4"
+              class="service-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-service-4"
+              tabindex="-1"
+            >
+              <span class="service-tab-number" aria-hidden="true">04</span>
+              <span class="service-tab-label">Custom Internal Tools</span>
+            </button>
+          </div>
 
-          <!-- Service 2 -->
-          <article class="card service-card">
-            <div class="service-card-header">
-              <span class="service-number" aria-hidden="true">02</span>
-              <h3 class="card-title">2. Contact Forms, Checkouts &amp; Integrations</h3>
-            </div>
-            <p class="card-intro">
-              When customer-facing tools break, you lose inquiries and sales.
-            </p>
-            <ul class="service-list">
-              <li>
-                <strong>Broken Contact &amp; Lead Forms:</strong> Resolving delivery failures, script errors, and spam issues so customer messages actually reach your inbox.
-              </li>
-              <li>
-                <strong>Payment Gateways:</strong> Repairing or integrating payment processing (such as PayPal) to ensure transactions complete securely.
-              </li>
-              <li>
-                <strong>Third-Party APIs:</strong> Connecting or repairing external integrations, such as real-time shipping rate calculators or external data feeds.
-              </li>
-            </ul>
-          </article>
+          <div class="services-stack">
+            <!-- Service 1 -->
+            <article
+              id="panel-service-1"
+              class="card service-card is-active"
+              role="tabpanel"
+              aria-labelledby="tab-service-1"
+              aria-hidden="false"
+              tabindex="0"
+            >
+              <div class="service-card-header">
+                <span class="service-number" aria-hidden="true">01</span>
+                <h3 class="card-title">1. Legacy Code &amp; Web Maintenance</h3>
+              </div>
+              <p class="card-intro">
+                If your site or application was built years ago and has stopped working—or if your hosting provider is warning you about an outdated PHP version—I can step in and fix it.
+              </p>
+              <ul class="service-list">
+                <li>
+                  <strong>PHP Upgrades:</strong> Reviewing existing code, identifying deprecated functions, and ensuring scripts run cleanly on modern PHP versions without crashing.
+                </li>
+                <li>
+                  <strong>Database &amp; Script Fixes:</strong> Diagnosing database connection drops, correcting backend logic errors, and resolving runtime bugs.
+                </li>
+                <li>
+                  <strong>Code Cleanups:</strong> Organizing repetitive, messy code so your site is stable, faster, and easier to maintain moving forward.
+                </li>
+              </ul>
+            </article>
 
-          <!-- Service 3 -->
-          <article class="card service-card">
-            <div class="service-card-header">
-              <span class="service-number" aria-hidden="true">03</span>
-              <h3 class="card-title">3. Server, Hosting &amp; DNS Troubleshooting</h3>
-            </div>
-            <p class="card-intro">
-              Control panels and server settings can be confusing, and an incorrect configuration can take your entire site offline.
-            </p>
-            <ul class="service-list">
-              <li>
-                <strong>cPanel &amp; Hosting Configuration:</strong> Resolving file permission errors, misconfigured <code>.htaccess</code> files, and directory access issues.
-              </li>
-              <li>
-                <strong>Domain &amp; DNS Settings:</strong> Correcting MX, SPF, and A records so your domain resolves properly and emails don't end up in spam folders.
-              </li>
-              <li>
-                <strong>Site Migrations:</strong> Moving websites and databases cleanly between hosting accounts without downtime or lost data.
-              </li>
-            </ul>
-          </article>
+            <!-- Service 2 -->
+            <article
+              id="panel-service-2"
+              class="card service-card"
+              role="tabpanel"
+              aria-labelledby="tab-service-2"
+              aria-hidden="true"
+              tabindex="-1"
+            >
+              <div class="service-card-header">
+                <span class="service-number" aria-hidden="true">02</span>
+                <h3 class="card-title">2. Contact Forms, Checkouts &amp; Integrations</h3>
+              </div>
+              <p class="card-intro">
+                When customer-facing tools break, you lose inquiries and sales.
+              </p>
+              <ul class="service-list">
+                <li>
+                  <strong>Broken Contact &amp; Lead Forms:</strong> Resolving delivery failures, script errors, and spam issues so customer messages actually reach your inbox.
+                </li>
+                <li>
+                  <strong>Payment Gateways:</strong> Repairing or integrating payment processing (such as PayPal) to ensure transactions complete securely.
+                </li>
+                <li>
+                  <strong>Third-Party APIs:</strong> Connecting or repairing external integrations, such as real-time shipping rate calculators or external data feeds.
+                </li>
+              </ul>
+            </article>
 
-          <!-- Service 4 -->
-          <article class="card service-card">
-            <div class="service-card-header">
-              <span class="service-number" aria-hidden="true">04</span>
-              <h3 class="card-title">4. Custom Internal Tools</h3>
-            </div>
-            <p class="card-intro">
-              If your business is struggling with paper forms, messy spreadsheets, or repetitive manual entry, I build lightweight, focused internal tools to handle the routine work.
-            </p>
-            <ul class="service-list">
-              <li>
-                <strong>Custom Back-Office Panels:</strong> Built with modern frameworks like Laravel and Filament for fast, secure inventory or order tracking.
-              </li>
-              <li>
-                <strong>Workflow Automation:</strong> Replacing manual data calculation with automated invoice generators and reporting tools.
-              </li>
-            </ul>
-          </article>
+            <!-- Service 3 -->
+            <article
+              id="panel-service-3"
+              class="card service-card"
+              role="tabpanel"
+              aria-labelledby="tab-service-3"
+              aria-hidden="true"
+              tabindex="-1"
+            >
+              <div class="service-card-header">
+                <span class="service-number" aria-hidden="true">03</span>
+                <h3 class="card-title">3. Server, Hosting &amp; DNS Troubleshooting</h3>
+              </div>
+              <p class="card-intro">
+                Control panels and server settings can be confusing, and an incorrect configuration can take your entire site offline.
+              </p>
+              <ul class="service-list">
+                <li>
+                  <strong>cPanel &amp; Hosting Configuration:</strong> Resolving file permission errors, misconfigured <code>.htaccess</code> files, and directory access issues.
+                </li>
+                <li>
+                  <strong>Domain &amp; DNS Settings:</strong> Correcting MX, SPF, and A records so your domain resolves properly and emails don't end up in spam folders.
+                </li>
+                <li>
+                  <strong>Site Migrations:</strong> Moving websites and databases cleanly between hosting accounts without downtime or lost data.
+                </li>
+              </ul>
+            </article>
+
+            <!-- Service 4 -->
+            <article
+              id="panel-service-4"
+              class="card service-card"
+              role="tabpanel"
+              aria-labelledby="tab-service-4"
+              aria-hidden="true"
+              tabindex="-1"
+            >
+              <div class="service-card-header">
+                <span class="service-number" aria-hidden="true">04</span>
+                <h3 class="card-title">4. Custom Internal Tools</h3>
+              </div>
+              <p class="card-intro">
+                If your business is struggling with paper forms, messy spreadsheets, or repetitive manual entry, I build lightweight, focused internal tools to handle the routine work.
+              </p>
+              <ul class="service-list">
+                <li>
+                  <strong>Custom Back-Office Panels:</strong> Built with modern frameworks like Laravel and Filament for fast, secure inventory or order tracking.
+                </li>
+                <li>
+                  <strong>Workflow Automation:</strong> Replacing manual data calculation with automated invoice generators and reporting tools.
+                </li>
+              </ul>
+            </article>
+          </div>
         </div>
       </div>
     </section>
